@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+	
+	<div class="row">
+	<div class="col-12">
+		<h1 class="text-secondary">Agregar Concesionario</h1>
+	</div>
+	</div>
+	
+		<div class="row mt-5">
+			<form action="#" th:action="@{/comercial/post}"
+				th:object="${comercial}" method="post">
+				<div class="form-group">
+					<label>Nombre</label> <input class="form-control" type="text" th:field="*{nombre}">
+				</div>
+				<div class="form-group">
+					<label>Telefono</label> <input class="form-control" type="text" th:field="*{telefono}">
+				</div>
+				<div class="form-group">
+				<select th:field="*{concesionario}">
+						<option th:each="conce:${listaConcesionario}" th:value="${conce.id}" th:text=${conce.nombre}></option>
+					</select>
+				</div>
+				<div style="display:none">
+				<input type="text" th:field="*{id}">
+				</div>
+				
+				<div class="form-group">
+					
+						<input type="submit" value="Añadir" class="btn btn-success mt-2">
+					
+				</div>
+			</form>
+		</div>
+		<div class="row mt-5">
+			<div class="col-6">
+				<button type="button"><a class="btn btn-primary" href="/">Volver a HOME</a></button>
+			</div>
+			<div class="col-6">
+				<button type="button"><a class="btn btn-danger" href=/comercial/lista>Ver COMERCIALES</a></button>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

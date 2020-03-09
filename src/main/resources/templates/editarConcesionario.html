@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+	
+	<div class="row">
+	<div class="col-12">
+		<h1 class="text-secondary">Agregar Concesionario</h1>
+	</div>
+	</div>
+	
+		<div class="row mt-5">
+			<form action="#" th:action="@{/concesionario/post}"
+				th:object="${concesionario}" method="post">
+				<div class="form-group">
+					<label>Nombre</label> <input class="form-control" type="text" th:field="*{nombre}">
+				</div>
+				<div class="form-group">
+					<label>Marca</label> <input class="form-control" type="text" th:field="*{marca}">
+				</div>
+				<div class="form-group">
+					<label>Localidad</label> <input class="form-control" type="text" th:field="*{localidad}">
+				</div>
+				
+				<div style="display:none">
+				<input type="text" th:field="*{id}">
+				</div>
+				
+				<div class="form-group">
+					
+						<input type="submit" value="Añadir" class="btn btn-success mt-2">
+					
+				</div>
+			</form>
+		</div>
+		<div class="row mt-5">
+			<div class="col-6">
+				<button type="button"><a class="btn btn-primary" href="/">Volver a HOME</a></button>
+			</div>
+			<div class="col-6">
+				<button type="button"><a class="btn btn-danger" href=/concesionario/lista>Ver CONCESIONARIOS</a></button>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

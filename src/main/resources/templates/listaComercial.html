@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="row">
+	<div class="col-12">
+		<h1 class="text-secondary">Lista Concesionario</h1>
+	</div>
+	</div>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-12">
+				<table class="table">
+					<tr>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th>Telefono</th>
+						<th>Concesionario</th>
+						<th>Borrar</th>
+						<th>Editar</th>
+					</tr>
+					<tr th:each="comercial: ${listacomercial}">
+						<td th:text="${comercial.id}"></td>
+						<td th:text="${comercial.nombre}"></td>
+						<td th:text="${comercial.telefono}"></td>
+						<td th:text="${comercial.concesionario}"></td>
+						<td><button type="button"><a class="btn btn-danger" th:href="@{/comercial/borrar/{id}(id=${comercial.id})}">Borrar</a></button></td>
+						<td><button type="button"><a class="btn btn-warning" th:href="@{/comercial/editar/{id}(id=${comercial.id})}">Editar</a></button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-6">
+				<button type="button"><a class="btn btn-primary" href="/">Volver a HOME</a></button>
+			</div>
+			<div class="col-6">
+				<button type="button"><a class="btn btn-danger" href=/comercial/agregar>Agregar COMERCIAL</a></button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
