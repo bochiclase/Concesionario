@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<title>Insert title here</title>
+</head>
+<body>
+<header class="masthead">
+    <div class="row p-5">
+      <div class="col-6">
+
+
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title" id="exampleModalLabel">IDENTIFICATE INTRUSO</h4>
+		          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+		            <span aria-hidden="true">×</span>
+		          </button>
+		        </div>
+
+
+
+
+                <form action="#" th:action="@{/login}" method="post">
+			        <div class="modal-body">
+			        
+					  <div class="form-row">
+					    <div class="form-group col-md-12">
+					      <label for="texto">Usuario</label>
+					      <input type="text" name="username"  placeholder="usuario" class="form-control" id="texto">
+					    </div>
+	                  </div>
+			        
+					  <div class="form-row">
+					    <div class="form-group col-md-12">
+					      <label for="texto">Password</label>
+					      <input type="password"  name="password"  placeholder="contraseña" class="form-control" id="texto">
+					    </div>
+	                  </div>
+
+			        </div>
+			        <div class="modal-footer">
+		                <input type="submit" value="Añadir" class="btn btn-primary float-right">
+		                <button data-dismiss="modal" class="btn btn-outline-danger float-right mr-2">Cancelar</button>
+			        </div>
+                </form>
+		      </div>
+
+
+
+      </div>
+      <div class="col-6 float-right">
+      </div> 
+    </div>
+  </header>
+
+
+
+</body>
+</html>

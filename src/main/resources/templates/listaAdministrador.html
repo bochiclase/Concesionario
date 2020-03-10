@@ -20,25 +20,29 @@
 			<div class="col-12">
 				<table class="table">
 					<tr>
-						<th>Id</th>
+						
 						<th>Nombre</th>
 						<th>Telefono</th>
+						<th>Password</th>
+						<th>Rol</th>
 						<th>Concesionario</th>
 						<th>Borrar</th>
 						<th>Editar</th>
 					</tr>
 					<tr th:each="comercial: ${listaadministrador}">
-						<td th:text="${comercial.id}"></td>
+						
 						<td th:text="${comercial.nombre}"></td>
 						<td th:text="${comercial.telefono}"></td>
+						<td th:text="${comercial.password}"></td>
+						<td th:text="${comercial.rol}"></td>
 						
 						<td>
 						<ul th:each="conce : ${comercial.concesionarios}">
 						<li th:text="${conce.nombre}" style="list-style:none"></li>
 						</ul>
 						</td>
-						<td><button type="button"><a class="btn btn-danger" th:href="@{/administrador/borrar/{id}(id=${comercial.id})}">Borrar</a></button></td>
-						<td><button type="button"><a class="btn btn-warning" th:href="@{/administrador/editar/{id}(id=${comercial.id})}">Editar</a></button></td>
+						<td><div ><button  type="button"><a class="btn btn-danger" sec:authorize="hasAnyAuthority('Admin')" th:href="@{/administrador/borrar/{id}(id=${comercial.nombre})}">Borrar</a></button></div></td>
+						<td><button type="button"><a class="btn btn-warning" th:href="@{/administrador/editar/{id}(id=${comercial.nombre})}">Editar</a></button></td>
 					</tr>
 				</table>
 			</div>

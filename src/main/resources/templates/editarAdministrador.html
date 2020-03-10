@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="row mt-5">
-			<form action="#" th:action="@{/administrador/post}"
+			<form action="#" th:action="@{/administrador/postEditar}"
 				th:object="${administrador}" method="post">
 				<div class="form-group">
 					<label>Nombre</label> <input class="form-control" type="text"
@@ -29,6 +29,11 @@
 					<label>Telefono</label> <input class="form-control" type="text"
 						th:field="*{telefono}">
 				</div>
+				
+				<div class="form-group">
+					<label>Password</label> <input class="form-control" type="text"
+						th:field="*{pass}">
+				</div>
 
 				<div class="form-group">
 					<label>Concesionario</label> <select th:field="*{concesionarios}"
@@ -37,9 +42,16 @@
 							th:value="${conce.id}" th:text="${conce.nombre}"></option>
 					</select>
 				</div>
-				<div style="display: none">
-					<input type="text" th:field="*{id}">
+				
+				<div class="form-group">
+					<label>Rol</label> <select th:field="*{rol}">
+						<option th:each="roles:${listaroles}"
+							th:value="${roles.nombre}" th:text="${roles.nombre}"></option>
+					</select>
 				</div>
+				
+				
+				
 
 				<div class="form-group">
 

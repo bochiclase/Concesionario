@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-secondary">Consultas</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
+				<table class="table">
+					<tr>
+						<th>Nombre</th>
+						<th>Password</th>
+						<th>Telefono</th>
+					</tr>
+					<tr th:each="lista:${listaTelefono}">
+						<th th:text="${lista.nombre}"></th>
+						<th th:text="${lista.pass}"></th>
+						<th th:text="${lista.telefono}"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
